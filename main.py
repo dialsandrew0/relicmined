@@ -1,15 +1,24 @@
-import streamlit as st
+import argparse
+import json
 from cv_pipeline.orchestrator import analyze_object
 from opportunity_engine.strategy_generator import generate_strategy
 
-st.title("RelicMined - Object Intelligence Platform")
-uploaded_file = st.file_uploader("Upload photo of object", type=["jpg", "png"])
+def main():
+    parser = argparse.ArgumentParser(
+        description="RelicMined CLI - Run the full pipeline on a single image."
+    )
+    parser.add_argument("--image", required=True, help="Path to item photo (jpg/png)")
+    args = parser.parse_args()
 
-if uploaded_file:
-    st.image(uploaded_file)
-    result = analyze_object(uploaded_file)
-    st.json(result)
-    
+    print(f"Analyzing: {args.image}")
+    result = analyze_object(args.image)
     strategy = generate_strategy(result)
-    st.subheader("Sales Strategy")
-    st.write(strategy)
+
+    print("\n--- Object Analysis ---")
+    print(json.dumps(result, indent=2))
+
+    print("\n--- Sales Strategy ---")
+    print(json.dumps(strategy, indent=2))
+
+if __name__ == "__main__":
+    main()
