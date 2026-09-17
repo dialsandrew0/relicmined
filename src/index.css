@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Space+Grotesk:wght@500;600;700;800&family=JetBrains+Mono:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-display: "Righteous", "Space Grotesk", cursive, sans-serif;
+  --font-retro: "Space Grotesk", sans-serif;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #0c0814;
+  color: #f3f4f6;
+  background-image: 
+    radial-gradient(#2d1b4e 1px, transparent 1px),
+    radial-gradient(#1e1038 1px, #0c0814 1px);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
+}
+
+/* 90s Pop Retro Utility Classes */
+.pop-shadow {
+  box-shadow: 5px 5px 0px 0px #000000;
+}
+
+.pop-shadow-pink {
+  box-shadow: 5px 5px 0px 0px #ff007f;
+}
+
+.pop-shadow-cyan {
+  box-shadow: 5px 5px 0px 0px #00f0ff;
+}
+
+.pop-shadow-yellow {
+  box-shadow: 5px 5px 0px 0px #ffe600;
+}
+
+.pop-shadow-lime {
+  box-shadow: 5px 5px 0px 0px #a3ff00;
+}
+
+.pop-shadow-purple {
+  box-shadow: 5px 5px 0px 0px #a855f7;
+}
+
+.bg-pop-grid {
+  background-size: 24px 24px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 0, 127, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 240, 255, 0.08) 1px, transparent 1px);
+}
+
+.bg-memphis {
+  background-color: #120b24;
+  background-image: radial-gradient(rgba(255, 0, 127, 0.2) 2px, transparent 2px), radial-gradient(rgba(0, 240, 255, 0.2) 2px, #120b24 2px);
+  background-size: 32px 32px;
+  background-position: 0 0, 16px 16px;
+}
+
+/* Scanline Overlay Effect for CRT 90s aesthetic */
+.scanline-box {
+  position: relative;
+  overflow: hidden;
+}
+
+.scanline-box::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
+  background-size: 100% 4px;
+  z-index: 10;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+/* Custom scrollbar for 90s Pop style */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0c0814;
+  border-left: 2px solid #2d1b4e;
+}
+::-webkit-scrollbar-thumb {
+  background: #ff007f;
+  border: 2px solid #0c0814;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00f0ff;
+}
+

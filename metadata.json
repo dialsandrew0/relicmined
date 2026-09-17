@@ -1,0 +1,8 @@
+{
+  "name": "RelicMined",
+  "description": "AI-powered computer vision and multi-agent pipeline for antique and collectible identification, valuation, and sales strategy.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

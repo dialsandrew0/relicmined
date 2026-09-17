@@ -1,9 +1,0 @@
-streamlit
-torch
-torchvision
-transformers
-pillow
-opencv-python
-langgraph
-numpy
-requests
